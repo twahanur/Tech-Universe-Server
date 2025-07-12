@@ -13,7 +13,10 @@ const app = express()
 
 await connectDB()
 await connectCloudinary()
-
+app.use(cors({
+  origin: [process.env.FRONTEND_URL], // allow these origins
+  credentials: true, // if using cookies
+}));
 app.use(cors())
 app.use(clerkMiddleware())
 
