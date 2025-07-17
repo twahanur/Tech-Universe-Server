@@ -14,14 +14,12 @@ const app = express()
 await connectDB()
 await connectCloudinary()
 app.use(cors({
-  origin: [process.env.FRONTEND_URL], // allow these origins
-  credentials: true, // if using cookies
-}));
-app.use(cors({
-  origin: 'https://tech-universe-seven.vercel.app',
+  origin: [process.env.FRONTEND_URL], // ✅ Only allow frontend
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 app.use(clerkMiddleware())
 
 app.get('/', (req, res) => res.send("API Working perfectly...."))
