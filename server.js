@@ -18,7 +18,7 @@ app.use(cors({
   credentials: true, // if using cookies
 }));
 app.use(cors({
-  origin: '*',
+  origin: 'http://tech-universe-seven.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
